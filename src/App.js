@@ -113,6 +113,10 @@ updateDate(){
 
 
     const columns = [{
+      Header: 'Application Timestamp',
+      accessor: 'application_info.timestamp',
+      Cell: props => <span className='string'>{new Date(parseInt(props.value)).toString().substring(0,25)}</span> // Custom cell components!
+    },{
       Header: 'Node Hostname',
       accessor: 'id' // String-based value accessors!
     },{
@@ -171,10 +175,6 @@ updateDate(){
       Header: '15 Min Load',
       accessor: 'machine_info.load.average_15_min',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: 'Application Timestamp',
-      accessor: 'application_info.timestamp',
-      Cell: props => <span className='string'>{new Date(parseInt(props.value)).toISOString()}</span> // Custom cell components!
     }]
    
     return (
