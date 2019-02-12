@@ -20,7 +20,7 @@ getTrProps = (state, rowInfo, column, instance) => {
 }
 
 fetchData = async () => {
-  axios.get('https://cpen431monitor.herokuapp.com/getData')
+  axios.get('https://cpen431a5.herokuapp.com/getData')
         .then(res => {
             console.log(res)
             this.setState({d: res})
