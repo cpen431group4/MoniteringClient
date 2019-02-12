@@ -60,26 +60,6 @@ componentWillUnmount() {
       width: '150',
       Cell: props => <span className='number'>{(props.value) ? "Alive" : "Dead"}</span> // Custom cell components!
     },{
-    Header: '# Requests',
-      accessor: 'application_info.num_requests',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# SavedBytes',
-      accessor: 'application_info.num_savedBytes',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# KeysSaved',
-      accessor: 'application_info.num_keys_saved',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# Cached',
-      accessor: 'application_info.elements_cached',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
       Header: 'CPU Usage',
       accessor: 'machine_info.cpu.usage',
       width: '150',
@@ -90,17 +70,17 @@ componentWillUnmount() {
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Total Mem',
+      Header: 'Total Memory',
       accessor: 'machine_info.memory.total',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Free Mem',
+      Header: 'Free Memory',
       accessor: 'machine_info.memory.free',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Buffer Mem',
+      Header: 'Buffer Memory',
       accessor: 'machine_info.memory.buffers',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
@@ -129,12 +109,34 @@ componentWillUnmount() {
       accessor: 'machine_info.load.average_15_min',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# Requests',
+        accessor: 'application_info.num_requests',
+        width: '150',
+        Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# SavedBytes',
+      accessor: 'application_info.num_savedBytes',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# KeysSaved',
+      accessor: 'application_info.num_keys_saved',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# Cached',
+      accessor: 'application_info.elements_cached',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     }]
    
     return (
       <div>
-        <h1>CPEN 431 Group 4A Monitoring Dashboard</h1>
-        
+        {<h1>CPEN 431 Group 4A Monitoring Dashboard</h1>}
+        {this.state && this.state.d &&  <h2>Total Nodes: {this.state.d.data[this.state.d.data.length-1].stats.total_nodes} <br />
+         Live Nodes: {this.state.d.data[this.state.d.data.length-1].stats.alive_nodes_machine} <br />
+         Live Apps: {this.state.d.data[this.state.d.data.length-1].stats.alive_nodes_app}</h2>}
       { this.state && this.state.d && 
           <ReactTable
           data={this.state.d.data[this.state.d.data.length-1].nodes}
