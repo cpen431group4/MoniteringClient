@@ -132,9 +132,8 @@ componentWillUnmount() {
     }]
    
     return (
-      console.log(this.state.d),
       <div>
-        <h1>Monitering Dashboard</h1>
+        <h1>CPEN 431 Group 4A Monitering Dashboard</h1>
         
       { this.state && this.state.d && 
           <ReactTable
