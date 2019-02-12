@@ -39,7 +39,7 @@ componentWillUnmount() {
   render (){
     const columns = [
     {
-      Header: 'Application Timestamp',
+      Header: 'Timestamp',
       accessor: 'timestamp',
       width: '220',
       Cell: props => <span className='string'>{new Date(this.state.d.data[this.state.d.data.length-1].timestamp).toString().substring(0,25)}</span> // Custom cell components!
