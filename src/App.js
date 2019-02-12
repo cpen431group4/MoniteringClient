@@ -29,7 +29,8 @@ fetchData = async () => {
 }
 
 componentDidMount() {
-  this.interval = setInterval(() => this.fetchData(data => this.setState({ d: data })), 1000);
+  this.fetchData(data => this.setState({ d: data }));
+  this.interval = setInterval(() => this.fetchData(data => this.setState({ d: data })), 30000);
 }
 
 componentWillUnmount() {
