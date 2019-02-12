@@ -60,6 +60,26 @@ componentWillUnmount() {
       width: '150',
       Cell: props => <span className='number'>{(props.value) ? "Alive" : "Dead"}</span> // Custom cell components!
     },{
+    Header: '# Requests',
+      accessor: 'application_info.num_requests',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# SavedBytes',
+      accessor: 'application_info.num_savedBytes',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# KeysSaved',
+      accessor: 'application_info.num_keys_saved',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
+      Header: '# Cached',
+      accessor: 'application_info.elements_cached',
+      width: '150',
+      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+    },{
       Header: 'CPU Usage',
       accessor: 'machine_info.cpu.usage',
       width: '150',
@@ -70,17 +90,17 @@ componentWillUnmount() {
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Total Memory',
+      Header: 'Total Mem',
       accessor: 'machine_info.memory.total',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Free Memory',
+      Header: 'Free Mem',
       accessor: 'machine_info.memory.free',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     },{
-      Header: 'Buffer Memory',
+      Header: 'Buffer Mem',
       accessor: 'machine_info.memory.buffers',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
@@ -107,26 +127,6 @@ componentWillUnmount() {
     },{
       Header: '15 Min Load',
       accessor: 'machine_info.load.average_15_min',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# Requests',
-        accessor: 'application_info.num_requests',
-        width: '150',
-        Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# SavedBytes',
-      accessor: 'application_info.num_savedBytes',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# KeysSaved',
-      accessor: 'application_info.num_keys_saved',
-      width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-    },{
-      Header: '# Cached',
-      accessor: 'application_info.elements_cached',
       width: '150',
       Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
     }]
