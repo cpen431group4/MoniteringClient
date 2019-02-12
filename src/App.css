@@ -9,3 +9,12 @@
   padding-bottom: 40px;
 }
 
+.borderCellCls {
+  border-right: 2px solid rgba(0,0,0,0.6) !important;
+  border-left: 2px solid rgba(0,0,0,0.6) !important;
+}
+
+h1 {
+  text-align: center;
+}
+
