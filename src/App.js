@@ -61,10 +61,10 @@ componentWillUnmount() {
       width: '150',
       Cell: props => <span className='number'>{(props.value) ? "Alive" : "Dead"}</span> // Custom cell components!
     },{
-    Header: '# Requests',
-      accessor: 'application_info.num_requests',
+      Header: 'Requests/Second',
+      accessor: 'application_info',
       width: '150',
-      Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+      Cell: props => <span className='number'>{(props.value) ? (1000*parseFloat(props.original.application_info.num_requests)/parseFloat(props.original.application_info.time_interval)) : ''}</span> // Custom cell components!
     },{
       Header: '# SavedBytes',
       accessor: 'application_info.num_savedBytes',
